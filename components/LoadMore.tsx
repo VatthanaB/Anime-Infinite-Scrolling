@@ -4,24 +4,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import AnimeCard from "./AnimeCard";
-import { useContext } from "react";
-import { OrderContext } from "./OrderContext";
 
-let page = 1;
+let page = 2;
 export type AnimeCard = JSX.Element;
-
 function LoadMore() {
-  const { selectedOrder } = useContext(OrderContext);
   const { ref, inView } = useInView();
   const [data, setData] = useState<AnimeCard[]>([]);
   useEffect(() => {
     if (inView) {
-      fetchAnime(page, selectedOrder).then((res) => {
+      fetchAnime(page).then((res) => {
         setData([...data, ...res]);
       });
       page++;
     }
-  }, [inView, data, order]);
+  }, [inView, data]);
   return (
     <>
       <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
