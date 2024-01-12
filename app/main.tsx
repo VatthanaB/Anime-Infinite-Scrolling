@@ -10,11 +10,11 @@ const Main = () => {
   };
   return (
     <div>
-      <div className="flex justify-between mb-5">
-        <h2 className="text-3xl text-white font-bold">Explore Anime</h2>
+      <div className=" space-y-5 md:space-y-0 lg:flex justify-center items-center   md:justify-between mb-10 md:mb-5 ">
+        <h2 className="text-3xl text-white font-bold self">Explore Anime</h2>
 
         <select
-          className="select select-sm w-full max-w-xs"
+          className="select md:select-sm w-full max-w-xs"
           onChange={handleSelectChange}
           value={selectedValue}
         >
