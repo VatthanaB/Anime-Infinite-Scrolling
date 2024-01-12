@@ -5,19 +5,28 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import AnimeCard from "./AnimeCard";
 
-let page = 2;
+let page = 0;
+interface Props {
+  order: string;
+}
+
 export type AnimeCard = JSX.Element;
-function LoadMore() {
+function LoadMore({ order }: Props) {
   const { ref, inView } = useInView();
   const [data, setData] = useState<AnimeCard[]>([]);
   useEffect(() => {
     if (inView) {
-      fetchAnime(page).then((res) => {
+      fetchAnime(page, order).then((res) => {
         setData([...data, ...res]);
       });
       page++;
     }
-  }, [inView, data]);
+  }, [inView, data, order]);
+
+  useEffect(() => {
+    setData([]);
+    page = 0;
+  }, [order]);
   return (
     <>
       <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
