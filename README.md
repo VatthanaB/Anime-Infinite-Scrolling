@@ -1,4 +1,4 @@
-# Anime Infinite Scrolling App
+# Infinite Anime Viewer App
 
 This is an anime infinite scrolling app developed for showcasing in my portfolio. The app utilizes Next.js for the front-end framework, Framer Motion for animations, and leverages the power of infinite scrolling to fetch and display anime data from a dedicated API.
 
