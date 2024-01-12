@@ -54,3 +54,7 @@ This is an anime infinite scrolling app developed for showcasing in my portfolio
 2. Hover over the cards to experience interactive animations.
 
 3. Enjoy the continuously updated anime content fetched from the API.
+
+## Live Demo
+
+Explore the live version of the app: [Infinite Anime Viewer](https://infinite-anime-viewer.vercel.app/)

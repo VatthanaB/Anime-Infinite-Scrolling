@@ -10,7 +10,7 @@ const Main = () => {
   };
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between mb-5">
         <h2 className="text-3xl text-white font-bold">Explore Anime</h2>
 
         <select
